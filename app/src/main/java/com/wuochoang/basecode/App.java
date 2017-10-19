@@ -1,13 +1,11 @@
 package com.wuochoang.basecode;
 
-import com.crashlytics.android.Crashlytics;
 import com.wuochoang.basecode.base.BaseActivity;
 import com.wuochoang.basecode.di.component.ApplicationComponent;
 import com.wuochoang.basecode.di.module.ApplicationModule;
+import com.wuochoang.basecode.di.component.DaggerApplicationComponent;
 import com.olddog.common.AppCommon;
 
-import com.wuochoang.basecode.di.component.DaggerApplicationComponent;
-import io.fabric.sdk.android.Fabric;
 
 /**
  * Created by quyenlx on 8/8/2017.
@@ -25,7 +23,6 @@ public class App extends AppCommon {
     @Override
     public void onCreate() {
         super.onCreate();
-        Fabric.with(this, new Crashlytics());
         instance = this;
         component = DaggerApplicationComponent
                 .builder()

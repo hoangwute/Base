@@ -5,11 +5,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.wuochoang.basecode.App;
+import com.wuochoang.basecode.MainActivity;
 import com.wuochoang.basecode.common.utils.Utils;
 import com.wuochoang.basecode.di.component.ActivityComponent;
 import com.wuochoang.basecode.di.module.ActivityModule;
@@ -91,13 +93,13 @@ public abstract class BaseFragment extends Fragment implements BaseView {
     // Chỉ sử dụng trong main fragment
     @Override
     public void addFragment(BaseFragment fragment) {
-//        if (mActivity instanceof MainActivity) {
-//            FragmentManager frm = ((MainActivity) mActivity).mainFragment.getCurrentFragmentMgr();
-//            frm.beginTransaction()
-//                    .add(R.id.tab_container, fragment)
-//                    .addToBackStack(fragment.getClass().getSimpleName())
-//                    .commit();
-//        }
+        if (mActivity instanceof MainActivity) {
+            FragmentManager frm = ((MainActivity) mActivity).mainFragment.getFragmentManager();
+            frm.beginTransaction()
+                    .add(R.id.container, fragment)
+                    .addToBackStack(fragment.getClass().getSimpleName())
+                    .commit();
+        }
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.wuochoang.basecode.ui.devices;
 
+
 import com.wuochoang.basecode.base.BaseFragment;
 import com.wuochoang.basecode.base.BasePresenter;
 
@@ -42,6 +43,6 @@ public class DevicesFragment extends BaseFragment {
 
     @OnClick(R.id.add)
     public void onClicked() {
-//        addFragment(new ProfileFragment());
+        addFragment(new DevicesFragment());
     }
 }

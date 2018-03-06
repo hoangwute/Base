@@ -21,6 +21,11 @@
             app:layout_constraintTop_toTopOf="parent"></View>
     </android.support.constraint.ConstraintLayout>
 
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
